@@ -28,8 +28,8 @@ from streamlit_gsheets import GSheetsConnection
 import os
 
 st.set_page_config(
-    page_title="Kelly Nails - Gestión Financiera",
-    page_icon="💅",
+    page_title="David López - Gestión Financiera",
+    page_icon="💼",
     layout="wide"
 )
 
@@ -59,25 +59,11 @@ def cargar_deudas():
         return pd.DataFrame(columns=["id", "acreedor", "monto_total", "cuotas_totales", "cuotas_pagadas", "valor_cuota", "estado", "tipo"])
 
 # Mostrar Logo y Título
-col_logo, col_titulo = st.columns([1, 5])
-with col_logo:
-    if os.path.exists("logo.PNG"):
-        st.image("logo.PNG", width=100)
-    elif os.path.exists("logo.png"):
-        st.image("logo.png", width=100)
-    else:
-        st.write("💅")
-with col_titulo:
-    st.title("Gestor Financiero - Kelly Nails")
+st.title("Gestor Financiero - David López")
 
 st.markdown("---")
 
 # Menú lateral
-if os.path.exists("logo.PNG"):
-    st.sidebar.image("logo.PNG")
-elif os.path.exists("logo.png"):
-    st.sidebar.image("logo.png")
-
 opcion = st.sidebar.radio(
     "Navegación",
     ["Registrar Atención", "Historial e Ingresos", "Deudas y Balance General"]
